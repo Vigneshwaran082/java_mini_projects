@@ -1,4 +1,4 @@
-package home.learning.designprinciples.application;
+package home.learning.designprinciples.application.improved;
 
 import java.io.FileInputStream;
 import java.io.IOException;

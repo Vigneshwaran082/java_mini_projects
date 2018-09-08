@@ -7,3 +7,7 @@ Java mini projects for students
        =>Modify books in the inventory 
    How to run this application?
       I tested this application in Eclipse and intellij Idea IDE.To make it eask , just import this project in Eclipse IDE and start running the application
+
+
+Incase any help needed , mail me: vickyemporer@gmail.com.
+

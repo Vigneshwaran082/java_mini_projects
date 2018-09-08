@@ -1,9 +1,11 @@
 package home.learning.designprinciples.application;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+import java.util.Scanner;
 
 public class BookInventoryApplication {
 
@@ -13,9 +15,9 @@ public class BookInventoryApplication {
 
 
     public void loadApplicationPreferences(String fileLocation) throws IOException{
-        InputStream inputStream = (fileLocation != null)? new FileInputStream(fileLocation): new FileInputStream("src/home/learning/designprinciples/application/SystemPreference.properties");
+    	
         properties = new Properties();
-        properties.load(inputStream);
+        properties.load(getClass().getResourceAsStream("SystemPreference.properties"));
         loadDefaultBooksFromApplication();
     }
 

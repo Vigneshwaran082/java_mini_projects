@@ -1,5 +1,6 @@
 Java mini projects for students
-  1.)Book Inventory application with the following features:
+ 
+ 1.)Book Inventory application with the following features:
        =>Display books in the inventory. [On first load , books are loaded from properties file]
        =>Add new books to the inventory
        =>Delete the books in the inventory

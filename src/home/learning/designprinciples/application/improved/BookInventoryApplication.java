@@ -1,4 +1,4 @@
-package home.learning.designprinciples.application.improved;
+package home.learning.designprinciples.application;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class BookInventoryApplication {
 
 
     public void loadApplicationPreferences(String fileLocation) throws IOException{
-        InputStream inputStream = (fileLocation != null)? new FileInputStream(fileLocation): new FileInputStream("src/home/learning/designprinciples/application/improved/SystemPreference.properties");
+        InputStream inputStream = (fileLocation != null)? new FileInputStream(fileLocation): new FileInputStream("src/home/learning/designprinciples/application/SystemPreference.properties");
         properties = new Properties();
         properties.load(inputStream);
         loadDefaultBooksFromApplication();
@@ -111,16 +111,12 @@ public class BookInventoryApplication {
 
     private void deleteBook(){
         System.out.print("Enter book Name to delete :");
-        String bookName = null;
+        int bookId = 0;
         deleteBook: while (true) {
             try {
-                bookName = scanner.nextLine();
-                if (bookName == null || bookName.equalsIgnoreCase("")) {
-                    System.err.print("Invalid Book Name, Try Again:");
-                    continue;
-                }
+                bookId = Integer.parseInt(scanner.next());
                 for (Book book : this.books) {
-                    if (book.getBookName().equalsIgnoreCase(bookName)) {
+                    if (book.getBookId() == bookId) {
                         this.removeBook(book);
                         System.out.println("|==============================================|");
                         System.out.println("|      Book Deleted successfully!!   :)        |");
@@ -129,11 +125,11 @@ public class BookInventoryApplication {
                         break deleteBook;
                     }
                 }
-                System.err.print("Invalid Book Name, Try Again:");
+                System.err.print("Invalid Book Id, Try Again:");
                 continue deleteBook;
 
             } catch (Exception e) {
-                System.err.print("Invalid Book Name, Try Again:");
+                System.err.print("Invalid Book Id, Try Again:");
                 continue;
             }
         }
@@ -172,7 +168,7 @@ public class BookInventoryApplication {
         int bookQuantity = 0;
         while (true) {
             try {
-                bookQuantity = scanner.nextInt();
+                bookQuantity = Integer.parseInt(scanner.next());
                 break;
             } catch (Exception e) {
                 System.err.print("Invalid Quantity , try again:");

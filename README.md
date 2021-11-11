@@ -15,3 +15,12 @@ Java mini projects for students conatins
 
 Incase any help needed , mail me: vickyemporer@gmail.com.
 
+
+Do docker pull
+
+     docker pull vickyece82/java_mini_project:latest
+
+Run the image using the following commands
+	
+     docker run --name jmp -it vickyece82/java_mini_project:latest
+
